@@ -22,10 +22,9 @@ class Settings(BaseSettings):
     ALLOWED_HOSTS: List[str] = ["*"]
 
     # Inference (vLLM)
-    VLLM_API_URL: str = Field(default="http://localhost:8000/v1", description="vLLM Inference server base URL")
+    VLLM_API_URL: str = Field(default="http://localhost:11434/v1", description="LLM server base URL")
     VLLM_API_KEY: Optional[str] = None
-    PRIMARY_MODEL: str = Field(default="Qwen/Qwen2.5-Coder-32B-Instruct", description="Primary model name served by vLLM")
-    MAX_TOKENS: int = 4096
+    PRIMARY_MODEL: str = Field(default="mock-model")
     TEMPERATURE: float = 0.2
 
     # Vector DB (Qdrant)
