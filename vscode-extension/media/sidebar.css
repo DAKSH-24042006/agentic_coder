@@ -1,0 +1,236 @@
+body {
+    background-color: var(--vscode-sideBar-background);
+    color: var(--vscode-sideBar-foreground);
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px);
+}
+
+h3 {
+    margin-top: 0;
+    color: var(--vscode-editor-foreground);
+}
+
+.subtitle {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input[type="text"], input[type="password"], textarea {
+    background-color: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+    border: 1px solid var(--vscode-input-border, transparent);
+    border-radius: 4px;
+    padding: 8px;
+    font-family: inherit;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: var(--vscode-focusBorder);
+}
+
+.btn {
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--vscode-button-hoverBackground);
+}
+
+.btn-secondary {
+    background-color: var(--vscode-button-secondaryBackground, rgba(255,255,255,0.1));
+    color: var(--vscode-button-secondaryForeground, white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--vscode-button-secondaryHoverBackground, rgba(255,255,255,0.15));
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.panel-header h2 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.badge {
+    background: #007acc;
+    color: white;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+/* Agentic Pipeline Tracker */
+.pipeline-container {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 9px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.pipeline-step.active {
+    opacity: 1.0;
+}
+
+.pipeline-step.completed {
+    opacity: 0.8;
+}
+
+.pipeline-step .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #888;
+    margin-bottom: 4px;
+    transition: background-color 0.3s;
+}
+
+.pipeline-step.active .dot {
+    background: #00ff66;
+    box-shadow: 0 0 8px #00ff66;
+}
+
+.pipeline-step.completed .dot {
+    background: #007acc;
+}
+
+/* Chat Messages */
+.chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 350px;
+}
+
+.message {
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 85%;
+    font-size: 12px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.system-msg {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #888;
+    align-self: center;
+    max-width: 95%;
+    font-style: italic;
+}
+
+.user-msg {
+    background: #007acc;
+    color: white;
+    align-self: flex-end;
+}
+
+.agent-msg {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    align-self: flex-start;
+}
+
+pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 11px;
+}
+
+/* Input Fields */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+}
+
+.prompt-row textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.filter-row input {
+    width: 100%;
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.actions-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.status-msg {
+    color: #ff6666;
+    font-size: 11px;
+    margin-top: 8px;
+}

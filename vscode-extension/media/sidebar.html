@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Coding Agent</title>
+    <link rel="stylesheet" href="[CSS_URI]">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Auth Section -->
+        <div id="auth-panel" class="card">
+            <h3>Enterprise Authentication</h3>
+            <p class="subtitle">Please authenticate to access private repository indexing and agent models.</p>
+            <div class="form-group">
+                <input type="password" id="auth-password" placeholder="Enter Developer Access Code" />
+                <button id="btn-login" class="btn btn-primary">Login to Platform</button>
+            </div>
+            <div id="auth-status" class="status-msg"></div>
+        </div>
+
+        <!-- Chat & Agent Workspace -->
+        <div id="agent-panel" class="hidden">
+            <header class="panel-header">
+                <h2>Enterprise AI Assistant</h2>
+                <span class="badge">Qwen2.5-Coder 32B</span>
+            </header>
+
+            <!-- Agent Progress Pipeline Telemetry -->
+            <div class="pipeline-container">
+                <div class="pipeline-step" id="step-planner">
+                    <div class="dot"></div>
+                    <span>Planner</span>
+                </div>
+                <div class="pipeline-step" id="step-retrieval">
+                    <div class="dot"></div>
+                    <span>RAG</span>
+                </div>
+                <div class="pipeline-step" id="step-coding">
+                    <div class="dot"></div>
+                    <span>Coding</span>
+                </div>
+                <div class="pipeline-step" id="step-sandbox">
+                    <div class="dot"></div>
+                    <span>Sandbox</span>
+                </div>
+                <div class="pipeline-step" id="step-reviewer">
+                    <div class="dot"></div>
+                    <span>Review</span>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="chat-container" id="chat-messages">
+                <div class="message system-msg">
+                    Welcome to your enterprise assistant. Ask coding questions, generate implementations, or search repository context.
+                </div>
+            </div>
+
+            <!-- Input Controls -->
+            <div class="input-container">
+                <div class="filter-row">
+                    <input type="text" id="project-filter" placeholder="Project Name Filter (Optional)..." />
+                </div>
+                <div class="prompt-row">
+                    <textarea id="prompt-input" rows="3" placeholder="Ask a question or request a script..."></textarea>
+                </div>
+                <div class="actions-row">
+                    <button id="btn-generate" class="btn btn-primary">Send to Agent</button>
+                    <button id="btn-clear" class="btn btn-secondary">Clear Chat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="[JS_URI]"></script>
+</body>
+</html>

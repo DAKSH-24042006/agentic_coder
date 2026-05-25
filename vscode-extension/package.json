@@ -1,0 +1,82 @@
+{
+  "name": "enterprise-coder",
+  "displayName": "Enterprise AI Coding Agent",
+  "description": "IDE Integration for Enterprise repository-aware AI generation with local compliance standards.",
+  "version": "1.0.0",
+  "publisher": "enterprise",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "enterprise-coder-container",
+          "title": "Enterprise AI Coder",
+          "icon": "$(hubot)"
+        }
+      ]
+    },
+    "views": {
+      "enterprise-coder-container": [
+        {
+          "type": "webview",
+          "id": "enterprise-coder-chat-view",
+          "name": "Enterprise Chat Panel"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "enterprise-coder.explainCode",
+        "title": "Enterprise AI: Explain Selection"
+      },
+      {
+        "command": "enterprise-coder.generateInline",
+        "title": "Enterprise AI: Inline Completion"
+      },
+      {
+        "command": "enterprise-coder.indexWorkspace",
+        "title": "Enterprise AI: Index Workspace Repository"
+      }
+    ],
+    "configuration": {
+      "title": "Enterprise AI Coder Options",
+      "properties": {
+        "enterpriseCoder.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "FastAPI Backend API endpoint."
+        },
+        "enterpriseCoder.apiToken": {
+          "type": "string",
+          "default": "",
+          "description": "JWT Client auth token."
+        },
+        "enterpriseCoder.usePeft": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable enterprise PEFT coding style guidelines."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "node esbuild.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3"
+  }
+}
